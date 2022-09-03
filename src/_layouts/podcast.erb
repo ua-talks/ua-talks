@@ -1,0 +1,51 @@
+~~~ruby
+front_matter do
+  layout "default"
+  title_fn ->{
+    ->(resource){ "Подкаст «#{resource.data.name}»" }
+  }
+end
+~~~
+
+<h1><%= resource.data.name %></h1>
+
+<dl>
+  <dt><%= t "publishers.single.title" %></dt>
+  <% resource.relations.publisher.tap do |publisher| %>
+    <dd><a href="<%= publisher.relative_url %>"><%= publisher.data.name %></a></dd>
+  <% end %>
+
+  <dt>Рік</dt>
+  <% resource.relations.recordings.reduce(Set.new) { |memo, r| memo << r.data.date.year }.sort.tap do |years| %>
+    <dd>
+      <% if years.size > 1 %>
+        <%= years.first %> – <%= years.last %>
+      <% else %>
+        <%= years.first %>
+      <% end %>
+    </dd>
+  <% end %>
+</dl>
+
+<dl>
+  <dt>Де слухати</dt>
+  <dd>
+    <ul>
+      <% resource.data.links_to_listen&.each do |link| %>
+        <li><a href="<%= link %>" target="_blank" rel="nofollow"><%= link_to_listen_host_name(link) %></a></li>
+      <% end %>
+    </ul>
+  </dd>
+</dl>
+
+<%= yield %>
+
+<h2>Випуски</h2>
+
+<ul>
+  <% resource.relations.recordings.each do |recording| %>
+    <li>
+      <a href="<%= recording.relative_url %>"><%= recording_title(recording) %></a>
+    </li>
+  <% end %>
+</ul>

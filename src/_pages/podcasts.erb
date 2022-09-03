@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<h1><%= t "podcasts.title" %></h1>
+
+<ul>
+  <% collections.podcasts.resources.group_by { |podcast| podcast.relations.publisher }.each do |publisher, podcasts| %>
+    <li>
+      <% if podcasts.size > 1 %>
+        <a href="<%= publisher.relative_url %>"><%= publisher.data.name %></a>
+        <ul>
+          <% podcasts.each do |podcast| %>
+            <li>
+              <a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <% podcast = podcasts.first %>
+        <a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

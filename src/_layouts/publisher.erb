@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h1><%= resource.data.name %></h1>
+
+<%= yield %>
+
+<h2><%= t "podcasts.title" %></h2>
+
+<ul>
+  <% resource.relations.podcasts.each do |podcast| %>
+    <li>
+      <a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a>
+    </li>
+  <% end %>
+</ul>

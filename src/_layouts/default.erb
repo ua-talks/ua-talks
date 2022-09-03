@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="<%= site.metadata.description %>" />
+
+    <title>
+      <% if resource.layout.data.title_fn %>
+        <%= t :title_template, title: resource.layout.data.title_fn.call(resource) %>
+      <% elsif resource.data.name %>
+        <%= t :title_template, title: resource.data.name %>
+      <% else %>
+        <%= t :title_template, title: t("#{resource.data.slug}.title") %>
+      <% end %>
+    </title>
+
+    <link rel="stylesheet" href="<%= asset_path :css %>" />
+    <script src="<%= asset_path :js %>" defer></script>
+    <%= live_reload_dev_js %>
+  </head>
+  <body class="<%= resource.data.layout %>">
+    <header class="container">
+      <nav>
+        <a href="/"><%= t "title" %></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <%= yield %>
+    </main>
+
+    <footer class="container">
+      <nav>
+        <ul>
+          <li><a href="/">Головна</a></li>
+          <li><a href="/podcasts"><%= t "podcasts.title" %></a></li>
+          <li><a href="/people"><%= t "people.title" %></a></li>
+        </ul>
+      </nav>
+    </footer>
+  </body>
+</html>

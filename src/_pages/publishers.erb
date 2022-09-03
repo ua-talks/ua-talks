@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1><%= t "publishers.title" %></h1>
+
+<ul>
+  <% collections.publishers.each do |publisher| %>
+    <li>
+      <a href="<%= publisher.relative_url %>"><%= publisher.data.name %></a>
+    </li>
+  <% end %>
+</ul>

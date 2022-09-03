@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<h1><%= t :title %></h1>
+
+<%= yield %>
+
+<h2>Останні випуски</h2>
+
+<ul>
+  <% collections.recordings.resources.group_by { |r| r.data.podcast }.take(25).each do |_, recordings| %>
+    <% recent_recording = recordings.first %>
+    <li>
+      <a href="<%= recent_recording.relative_url %>"><%= recording_full_title(recent_recording) %></a>
+    </li>
+  <% end %>
+</ul>

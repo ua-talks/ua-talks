@@ -1,0 +1,15 @@
+uk:
+  title: Українські розмови
+  title_template: "%{title} | Українські розмови"
+  index:
+    title: Всі українські подкасти, лекції, інтерв'ю та монологи
+  podcasts:
+    title: Подкасти
+  people:
+    title: Співрозмовники
+    single:
+      title: Говорить
+  publishers:
+    title: Видавці
+    single:
+      title: Видавець

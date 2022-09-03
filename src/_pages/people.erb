@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1><%= t "people.title" %></h1>
+
+<ul>
+  <% collections.people.each do |person| %>
+    <li>
+      <a href="<%= person.relative_url %>"><%= person.data.name %></a>
+    </li>
+  <% end %>
+</ul>

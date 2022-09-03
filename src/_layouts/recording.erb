@@ -1,0 +1,80 @@
+~~~ruby
+front_matter do
+  layout "default"
+  title_fn ->{
+    ->(resource){ "«#{resource.data.title}» з подкасту «#{resource.relations.podcast.data.name}»" }
+  }
+end
+~~~
+
+<h1><%= resource.data.title %></h1>
+
+<dl>
+  <dt>Подкаст</dt>
+  <% resource.relations.podcast.tap do |podcast| %>
+    <dd><a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a></dd>
+  <% end %>
+
+  <dt>Випуск</dt>
+  <dd><%= resource.data.number || "позасерійний" %></dd>
+
+  <dt>Дата</dt>
+  <dd><%= I18n.l(resource.data.date) %></dd>
+
+  <dt>Тривалість</dt>
+  <dd><%= resource.data.minutes %> хв</dd>
+
+  <dt>
+    <% if resource.relations.people.size > 1 %>
+      Говорять
+    <% else %>
+      Говорить
+    <% end %>
+  </dt>
+  <dd>
+    <ul>
+      <% resource.relations.people.each do |person| %>
+        <li><a href="<%= person.relative_url %>"><%= person.data.name %></a></li>
+      <% end %>
+    </ul>
+  </dd>
+</dl>
+
+<dl>
+  <dt>Де слухати</dt>
+  <dd>
+    <ul>
+      <% resource.data.links_to_listen.each do |link| %>
+        <li><a href="<%= link %>" target="_blank" rel="nofollow"><%= link_to_listen_host_name(link) %></a></li>
+      <% end %>
+    </ul>
+  </dd>
+</dl>
+
+<article>
+  <%= yield %>
+</article>
+
+<dl>
+  <dt>Попередній випуск</dt>
+  <dd>
+    <% prev_recording(resource).tap do |prev_r| %>
+      <% if prev_r %>
+        <a href="<%= prev_r.relative_url %>" rel="prev"><%= recording_title(prev_r) %></a>
+      <% else %>
+        –
+      <% end %>
+    <% end %>
+  </dd>
+
+  <dt>Наступний випуск</dt>
+  <dd>
+    <% next_recording(resource).tap do |next_r| %>
+      <% if next_r %>
+        <a href="<%= next_r.relative_url %>" rel="next"><%= recording_title(next_r) %></a>
+      <% else %>
+        –
+      <% end %>
+    <% end %>
+  </dd>
+</dl>

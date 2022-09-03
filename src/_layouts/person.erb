@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<h1><%= resource.data.name %></h1>
+
+<%= yield %>
+
+<h2>Випуски за участю</h2>
+
+<ul>
+  <% resource.relations.recordings.each do |recording| %>
+    <li>
+      <a href="<%= recording.relative_url %>"><%= recording_full_title(recording) %></a>
+    </li>
+  <% end %>
+</ul>
