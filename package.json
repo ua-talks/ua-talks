@@ -6,6 +6,9 @@
     "esbuild": "node esbuild.config.js --minify",
     "esbuild-dev": "node esbuild.config.js --watch"
   },
+  "dependencies": {
+    "turbolinks": "^5.2.0"
+  },
   "devDependencies": {
     "esbuild": "^0.14.39",
     "glob": "^8.0.1",
