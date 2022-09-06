@@ -22,6 +22,11 @@ a {
   text-decoration-color: #ffb088;
 }
 
+a[href ^= "http"]:after {
+  content: " ↗";
+  font-size: 70%;
+}
+
 h1 {
   margin: 1rem 0 3rem;
   text-align: center;

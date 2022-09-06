@@ -32,7 +32,7 @@ end
   <dd>
     <ul>
       <% resource.data.links_to_listen&.each do |link| %>
-        <li><a href="<%= link %>" target="_blank" rel="nofollow"><%= link_to_listen_host_name(link) %></a></li>
+        <li><a href="<%= link %>"><%= link_to_listen_host_name(link) %></a></li>
       <% end %>
     </ul>
   </dd>
