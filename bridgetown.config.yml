@@ -17,7 +17,7 @@
 # https://learnxinyminutes.com/docs/yaml/
 #
 
-url: "" # the base hostname & protocol for your site, e.g. https://example.com
+url: "https://ua-talks.com" # the base hostname & protocol for your site, e.g. https://example.com
 
 template_engine: erb
 default_locale: uk
