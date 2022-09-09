@@ -45,7 +45,7 @@ end
   <dd>
     <ul>
       <% resource.data.links_to_listen.each do |link| %>
-        <li><a href="<%= link %>"><%= link_to_listen_host_name(link) %></a></li>
+        <li><a href="<%= link %>"><%= pretty_host_name(link) %></a></li>
       <% end %>
     </ul>
   </dd>
@@ -60,7 +60,7 @@ end
   <dd>
     <% prev_recording(resource).tap do |prev_r| %>
       <% if prev_r %>
-        <a href="<%= prev_r.relative_url %>" rel="prev"><%= recording_title(prev_r) %></a>
+        <a href="<%= prev_r.relative_url %>" rel="prev"><%= recording_numbered_title(prev_r) %></a>
       <% else %>
         –
       <% end %>
@@ -71,7 +71,7 @@ end
   <dd>
     <% next_recording(resource).tap do |next_r| %>
       <% if next_r %>
-        <a href="<%= next_r.relative_url %>" rel="next"><%= recording_title(next_r) %></a>
+        <a href="<%= next_r.relative_url %>" rel="next"><%= recording_numbered_title(next_r) %></a>
       <% else %>
         –
       <% end %>

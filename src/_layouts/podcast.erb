@@ -32,7 +32,7 @@ end
   <dd>
     <ul>
       <% resource.data.links_to_listen&.each do |link| %>
-        <li><a href="<%= link %>"><%= link_to_listen_host_name(link) %></a></li>
+        <li><a href="<%= link %>"><%= pretty_host_name(link) %></a></li>
       <% end %>
     </ul>
   </dd>
@@ -45,7 +45,7 @@ end
 <ul>
   <% resource.relations.recordings.each do |recording| %>
     <li>
-      <a href="<%= recording.relative_url %>"><%= recording_title(recording) %></a>
+      <a href="<%= recording.relative_url %>"><%= recording_numbered_title(recording) %></a>
     </li>
   <% end %>
 </ul>
