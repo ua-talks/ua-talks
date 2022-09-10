@@ -6,12 +6,10 @@
     <meta name="description" content="<%= site.metadata.description %>" />
 
     <title>
-      <% if resource.layout.data.title_fn %>
-        <%= t :title_template, title: resource.layout.data.title_fn.call(resource) %>
-      <% elsif resource.data.name %>
-        <%= t :title_template, title: resource.data.name %>
+      <% if resource.relative_url == "/" %>
+        <%= t :title %>
       <% else %>
-        <%= t :title_template, title: t("#{resource.data.slug}.title") %>
+        <%= t :title_template, title: head_title(resource) %>
       <% end %>
     </title>
 

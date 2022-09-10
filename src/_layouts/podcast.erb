@@ -1,11 +1,6 @@
-~~~ruby
-front_matter do
-  layout "default"
-  title_fn ->{
-    ->(resource){ "Подкаст «#{resource.data.name}»" }
-  }
-end
-~~~
+---
+layout: default
+---
 
 <h1><%= resource.data.name %></h1>
 
