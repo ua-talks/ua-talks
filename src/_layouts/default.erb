@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="<%= site.metadata.description %>" />
 
     <% head_title(resource).tap do |title| %>
       <title>
@@ -14,6 +13,11 @@
         <% end %>
       </title>
       <meta property="og:title" content="<%= title %>">
+    <% end %>
+
+    <% head_description(resource).tap do |description| %>
+      <meta name="description" content="<%= description %>" />
+      <meta property="og:description" content="<%= description %>" />
     <% end %>
 
     <link rel="stylesheet" href="<%= asset_path :css %>" data-turbolinks-track="reload" />
