@@ -20,6 +20,11 @@
       <meta property="og:description" content="<%= description %>" />
     <% end %>
 
+    <% resource.absolute_url.tap do |url| %>
+      <link rel="canonical" href="<%= url %>">
+      <meta property="og:url" content="<%= url %>">
+    <% end %>
+
     <link rel="stylesheet" href="<%= asset_path :css %>" data-turbolinks-track="reload" />
     <script src="<%= asset_path :js %>" defer data-turbolinks-track="reload"></script>
     <%= live_reload_dev_js %>
