@@ -45,6 +45,8 @@ collections:
   podcast_lists:
     output: true
     permalink: /:podcast/:title/
+    sort_by: position
+    sort_direction: descending
     relations:
       belongs_to:
         - podcast # poor man `has_one through: :recordings`; manually filled in
