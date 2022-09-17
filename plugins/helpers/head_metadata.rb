@@ -14,6 +14,10 @@ module Helpers::HeadMetadata
     "Подкаст «#{resource.data.name}»"
   end
 
+  def podcast_lists_head_title(resource)
+    "#{resource.relations.podcast.data.name} – #{resource.data.title}"
+  end
+
   def people_head_title(resource)
     resource.data.name
   end
@@ -42,6 +46,10 @@ module Helpers::HeadMetadata
 
   def podcasts_head_description(resource)
     Loofah.fragment(resource.content).text.squish
+  end
+
+  def podcast_lists_head_description(resource)
+    "#{resource.data.title} є частиною подкасту «#{resource.relations.podcast.data.name}»"
   end
 
   def people_head_description(resource)

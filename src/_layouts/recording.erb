@@ -13,6 +13,23 @@ layout: default
   <dt>Випуск</dt>
   <dd><%= resource.data.number || "позасерійний" %></dd>
 
+  <% resource.relations.podcast_lists.presence&.tap do |lists| %>
+    <dt>
+      <% if lists.size > 1 %>
+        У списках
+      <% else %>
+        У списку
+      <% end %>
+    </dt>
+    <dd>
+      <ul>
+        <% lists.each do |list| %>
+          <li><a href="<%= list.relative_url %>"><%= list.data.title %></a></li>
+        <% end %>
+      </ul>
+    </dd>
+  <% end %>
+
   <dt>Дата</dt>
   <dd><%= I18n.l(resource.data.date) %></dd>
 

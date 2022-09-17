@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<h1><%= podcast_lists_head_title(resource) %></h1>
+
+<dl>
+  <dt>Подкаст</dt>
+  <% resource.relations.podcast.tap do |podcast| %>
+    <dd><a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a></dd>
+  <% end %>
+</dl>
+
+<article>
+  <%= yield %>
+</article>
+
+<h2>Випуски</h2>
+
+<ul>
+  <% resource.relations.recordings.each do |recording| %>
+    <li>
+      <a href="<%= recording.relative_url %>"><%= recording_numbered_title(recording) %></a>
+    </li>
+  <% end %>
+</ul>

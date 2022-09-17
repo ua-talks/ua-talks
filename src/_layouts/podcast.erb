@@ -35,6 +35,18 @@ layout: default
 
 <%= yield %>
 
+<% resource.relations.podcast_lists.presence&.tap do |lists| %>
+  <h2>Списки</h2>
+
+  <ul>
+    <% lists.each do |list| %>
+      <li>
+        <a href="<%= list.relative_url %>"><%= list.data.title %></a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <h2>Випуски</h2>
 
 <ul>
