@@ -9,6 +9,9 @@ layout: default
   <% resource.relations.podcast.tap do |podcast| %>
     <dd><a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a></dd>
   <% end %>
+
+  <dt>Кількість випусків</dt>
+  <dd><%= resource.relations.recordings.size %></dd>
 </dl>
 
 <article>
