@@ -1,5 +1,5 @@
 ---
-publisher: максим-іщенко
+publisher: startups-are-hard
 name: Startups are hard
 links_to_listen:
   - https://newsletter.maxua.com/podcast
