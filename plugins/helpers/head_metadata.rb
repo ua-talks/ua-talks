@@ -11,7 +11,12 @@ module Helpers::HeadMetadata
   end
 
   def podcasts_head_title(resource)
-    "Подкаст «#{resource.data.name}»"
+    name = resource.data.name
+    if name =~ /podcast|подкаст/i
+      name
+    else
+      "Подкаст «#{resource.data.name}»"
+    end
   end
 
   def podcast_lists_head_title(resource)
