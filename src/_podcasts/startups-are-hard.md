@@ -1,5 +1,6 @@
 ---
-publisher: startups-are-hard
+publishers:
+  - startups-are-hard
 name: Startups are hard
 links_to_listen:
   - https://newsletter.maxua.com/podcast

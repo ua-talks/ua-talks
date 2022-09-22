@@ -5,9 +5,10 @@ layout: default
 <h1><%= t "podcasts.title" %></h1>
 
 <ul>
-  <% collections.podcasts.resources.group_by { |podcast| podcast.relations.publisher }.each do |publisher, podcasts| %>
+  <% collections.podcasts.resources.group_by { |podcast| podcast.relations.publishers }.each do |publishers, podcasts| %>
     <li>
-      <% if podcasts.size > 1 %>
+      <% if podcasts.size > 1 && publishers.size == 1 %>
+        <% publisher = publishers.first %>
         <a href="<%= publisher.relative_url %>"><%= publisher.data.name %></a>
         <ul>
           <% podcasts.each do |podcast| %>

@@ -38,7 +38,7 @@ collections:
     permalink: /:name/
     relations:
       belongs_to:
-        - publisher
+        - publishers
       has_many:
         - recordings
         - podcast_lists

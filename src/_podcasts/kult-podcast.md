@@ -1,5 +1,6 @@
 ---
-publisher: kult-podcast
+publishers:
+ - kult-podcast
 name: "Kult: Podcast"
 links_to_listen:
   - https://soundcloud.com/kultpodcast

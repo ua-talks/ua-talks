@@ -5,10 +5,20 @@ layout: default
 <h1><%= podcasts_head_title(resource) %></h1>
 
 <dl>
-  <dt><%= t "publishers.single.title" %></dt>
-  <% resource.relations.publisher.tap do |publisher| %>
-    <dd><a href="<%= publisher.relative_url %>"><%= publisher.data.name %></a></dd>
-  <% end %>
+  <dt>
+    <% if resource.relations.publishers.size > 1 %>
+      <%= t "publishers.title" %>
+    <% else %>
+      <%= t "publishers.single.title" %>
+    <% end %>
+  </dt>
+  <dd>
+    <ul>
+      <% resource.relations.publishers.each do |publisher| %>
+        <li><a href="<%= publisher.relative_url %>"><%= publisher.data.name %></a></li>
+      <% end %>
+    </ul>
+  </dd>
 
   <dt>Рік</dt>
   <% resource.relations.recordings.reduce(Set.new) { |memo, r| memo << r.data.date.year }.sort.tap do |years| %>
