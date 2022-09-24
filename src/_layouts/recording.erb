@@ -33,8 +33,10 @@ layout: default
   <dt>Дата</dt>
   <dd><%= I18n.l(resource.data.date) %></dd>
 
-  <dt>Тривалість</dt>
-  <dd><%= resource.data.minutes %> хв</dd>
+  <% if resource.data.minutes %>
+    <dt>Тривалість</dt>
+    <dd><%= resource.data.minutes %> хв</dd>
+  <% end %>
 
   <dt>
     <% if resource.relations.people.size > 1 %>
