@@ -59,11 +59,14 @@ module Helpers::HeadMetadata
 
   def people_head_description(resource)
     podcasts = resource.relations.recordings.reduce(Set.new) { |memo, r| memo << r.relations.podcast }
-    if podcasts.size > 1
-      "Учасник подкастів #{podcasts.map{ |p| "«#{p.data.name}»" }.join(", ")}"
-    else
+    case podcasts.size
+    when 0
+      # do nothing
+    when 1
       podcast = podcasts.first
       "Учасник подкасту «#{podcast.data.name}»"
+    else
+      "Учасник подкастів #{podcasts.map{ |p| "«#{p.data.name}»" }.join(", ")}"
     end
   end
 
