@@ -23,7 +23,7 @@ a {
 }
 
 a[href ^= "http"]:after {
-  content: " ↗";
+  content: "\00a0↗";
   font-size: 70%;
 }
 
