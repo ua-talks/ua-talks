@@ -6,12 +6,28 @@ layout: default
 
 <%= yield %>
 
-<h2>Випуски за участю</h2>
+<% resource.data.social_media_links.presence&.tap do |links| %>
+  <section>
+    <h2>У соціальних мережах</h2>
 
-<ul>
-  <% resource.relations.recordings.each do |recording| %>
-    <li>
-      <a href="<%= recording.relative_url %>"><%= recording_full_title(recording) %></a>
-    </li>
-  <% end %>
-</ul>
+    <ul>
+      <% links.each do |link| %>
+        <li>
+          <a href="<%= link %>"><%= pretty_host_name(link) %></a>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+<section>
+  <h2>Випуски за участю</h2>
+
+  <ul>
+    <% resource.relations.recordings.each do |recording| %>
+      <li>
+        <a href="<%= recording.relative_url %>"><%= recording_full_title(recording) %></a>
+      </li>
+    <% end %>
+  </ul>
+</section>
