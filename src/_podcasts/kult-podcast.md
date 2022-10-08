@@ -7,9 +7,10 @@ links_to_listen:
   - https://podcasts.apple.com/ua/podcast/kult-podcast/id1581339249
   - https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjg5MjM3MjAyNy9zb3VuZHMucnNz
   - https://podcasts.nv.ua/ukr/podcast/37-kult-podcast.html
+  - https://www.youtube.com/channel/UC9Odm1zc6bZuAMGaWZLtd8g
 ---
 
-Kult: Podcast - це україномовний подкаст про культуру. Це розмови про культових
+[Kult: Podcast][4] - це україномовний подкаст про культуру. Це розмови про культових
 авторів, культові явища та культові епохи - світової та української культури.
 Ми розповідаємо про них так, щоби ви відчули живих людей, які продовожують
 говорити саме до вас. Говоримо про класиків так, немов вони наші сучасники і
@@ -25,3 +26,4 @@ Kult: Podcast - це україномовний подкаст про культ
 [1]: https://patreon.com/kultpodcast
 [2]: /people/тетяна-огаркова/
 [3]: /people/володимир-єрмоленко/
+[4]: https://www.facebook.com/kultpodcast
