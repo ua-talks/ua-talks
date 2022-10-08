@@ -46,6 +46,19 @@ layout: default
   </dd>
 </dl>
 
+<% resource.data.social_media_links.presence&.tap do |links| %>
+  <dl>
+    <dt>Слідкувати</dt>
+    <dd>
+      <ul>
+        <% links.each do |link| %>
+          <li><a href="<%= link %>"><%= pretty_host_name(link) %></a></li>
+        <% end %>
+      </ul>
+    </dd>
+  </dl>
+<% end %>
+
 <%= yield %>
 
 <% resource.relations.podcast_lists.presence&.tap do |lists| %>
