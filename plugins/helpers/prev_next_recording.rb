@@ -13,4 +13,11 @@ module Helpers::PrevNextRecording
       all_recordings[idx - 1] # recordings are sorted descending
     end
   end
+
+  def recording_index_in_the_list(recording, podcast_list)
+    all_recordings = podcast_list.relations.recordings
+    idx = all_recordings.index(recording)
+    # recordings are sorted descending
+    all_recordings.size - idx
+  end
 end

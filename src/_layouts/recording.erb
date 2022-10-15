@@ -24,7 +24,10 @@ layout: default
     <dd>
       <ul>
         <% lists.each do |list| %>
-          <li><a href="<%= list.relative_url %>"><%= list.data.title %></a></li>
+          <li>
+            <a href="<%= list.relative_url %>"><%= list.data.title %></a>,
+            випуск <%= recording_index_in_the_list(resource, list) %>
+          </li>
         <% end %>
       </ul>
     </dd>
