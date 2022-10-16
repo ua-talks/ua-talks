@@ -22,6 +22,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem "bridgetown", "~> 1.1.0", github: "bridgetownrb/bridgetown", ref: "9cbd574c"
 gem "nokogiri"
 gem "loofah"
+gem "ffi-icu"
 
 group :bridgetown_plugins do
   gem "bridgetown-sitemap"

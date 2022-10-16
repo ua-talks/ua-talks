@@ -5,7 +5,7 @@ layout: default
 <h1><%= t "people.title" %></h1>
 
 <ul>
-  <% collections.people.each do |person| %>
+  <% collections.people.resources.sort_alphabetically_by { |person| person.data.name }.each do |person| %>
     <li>
       <a href="<%= person.relative_url %>"><%= person.data.name %></a>
     </li>

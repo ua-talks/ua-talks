@@ -82,6 +82,8 @@ GEM
     faraday_middleware (1.2.0)
       faraday (~> 1.0)
     ffi (1.15.5)
+    ffi-icu (0.4.3)
+      ffi (~> 1.0, >= 1.0.9)
     hash_with_dot_access (1.2.0)
       activesupport (>= 5.0.0, < 8.0)
     i18n (1.12.0)
@@ -140,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   bridgetown (~> 1.1.0)!
   bridgetown-sitemap
+  ffi-icu
   loofah
   nokogiri
   pry
