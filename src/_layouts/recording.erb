@@ -68,6 +68,18 @@ layout: default
   </dd>
 </dl>
 
+<% resource.relations.podcast.data.donate_banner&.tap do |donate_banner| %>
+  <details>
+    <summary>
+      Як можна підтримати цей проєкт
+    </summary>
+
+    <div class="donate_details_body">
+      <%= markdownify(donate_banner) %>
+    </div>
+  </details>
+<% end %>
+
 <article>
   <%= yield %>
 </article>

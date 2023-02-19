@@ -10,6 +10,17 @@ links_to_listen:
   - https://www.youtube.com/channel/UC9Odm1zc6bZuAMGaWZLtd8g
 social_media_links:
   - https://www.facebook.com/kultpodcast
+donate_banner: |
+  Підтримати нас можна тут:
+
+  щомісячно: \
+  [patreon.com/kultpodcast](https://patreon.com/kultpodcast)
+
+  разово: \
+  картка: 5457 0822 9092 9368 \
+  paypal: volodymyr.philosophy@gmail.com
+
+  Усі донати йдуть на закупівлю автівок та інших корисних речей для ЗСУ
 ---
 
 Kult: Podcast - це україномовний подкаст про культуру. Це розмови про культових
