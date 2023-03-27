@@ -18,7 +18,7 @@ donate_banner: |
 
   разово: \
   картка: 5457 0822 9092 9368 \
-  paypal: volodymyr.philosophy@gmail.com
+  paypal: ukraine.resisting@gmail.com
 
   Усі донати йдуть на закупівлю автівок та інших корисних речей для ЗСУ
 ---
