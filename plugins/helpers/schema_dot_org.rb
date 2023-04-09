@@ -39,6 +39,7 @@ module Helpers::SchemaDotOrg
       "startDate" => podcast.relations.recordings.last&.then { |data| data.date },
       "endDate" => podcast.relations.recordings.first&.then { |data| data.date },
       "inLanguage" => "uk",
+      "sameAs" => podcast.data.links_to_listen,
     }
   end
 
