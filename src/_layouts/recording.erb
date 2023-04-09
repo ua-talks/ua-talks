@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+  <%= wrap_jsonld_schema(recording_jsonld_schema(resource)) %>
+</script>
+
 <h1><%= resource.data.title %></h1>
 
 <dl>
