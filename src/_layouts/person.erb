@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+  <%= wrap_jsonld_schema(person_jsonld_schema(resource)) %>
+</script>
+
 <h1><%= resource.data.name %></h1>
 
 <%= yield %>

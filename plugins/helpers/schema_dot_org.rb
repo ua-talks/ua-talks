@@ -15,6 +15,7 @@ module Helpers::SchemaDotOrg
       "inLanguage" => "uk",
       "sameAs" => recording.data.links_to_listen,
       "partOfSeries" => podcast_jsonld_schema(recording.relations.podcast),
+      "actor" => recording.relations.people.map { |person| person_jsonld_schema(person) },
     }
 
     recording.data.number&.then do |recording_number|
@@ -54,5 +55,21 @@ module Helpers::SchemaDotOrg
       "endDate" => podcast_list.relations.recordings.first&.then { |data| data.date },
       "partOfSeries" => podcast_jsonld_schema(podcast_list.relations.podcast),
     }
+  end
+
+  # https://schema.org/Person
+  def person_jsonld_schema(person)
+    result = {
+      "@type" => "Person",
+      "@id" => person.absolute_url,
+      "url" => person.absolute_url,
+      "name" => person.data.name,
+    }
+
+    person.data.social_media_links&.then do |social_media_links|
+      result.merge!("sameAs" => social_media_links)
+    end
+
+    result
   end
 end
