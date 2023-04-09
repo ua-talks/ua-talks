@@ -2,6 +2,10 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+  <%= wrap_jsonld_schema(podcast_jsonld_schema(resource)) %>
+</script>
+
 <h1><%= podcasts_head_title(resource) %></h1>
 
 <dl>

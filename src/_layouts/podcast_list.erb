@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<% if resource.data.season_number %>
+  <script type="application/ld+json">
+    <%= wrap_jsonld_schema(podcast_season_jsonld_schema(resource)) %>
+  </script>
+<% end %>
+
 <h1><%= podcast_lists_head_title(resource) %></h1>
 
 <dl>
