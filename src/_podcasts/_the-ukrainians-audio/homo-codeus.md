@@ -1,5 +1,12 @@
 ---
 name: Homo codeus
+links_to_listen:
+  - https://podcasts.apple.com/ua/podcast/homo-codeus/id1546619215
+  - https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy80NWMxYWM3NC9wb2RjYXN0L3Jzcw
+  - https://www.youtube.com/playlist?list=PLpXNW3lwgte9EFFYgYMaHfI9kH08fy7rW
+  - https://soundcloud.com/the-ukrainians/sets/homo-codeus
+  - https://open.spotify.com/show/1Zrz5WdtLqQLY2G8hMVNhf
+  - https://podcasts.nv.ua/podcast/268-homo-codeus.html
 ---
 
 Сучасне життя складно уявити без таких компаній, як Google, Facebook, Uber,

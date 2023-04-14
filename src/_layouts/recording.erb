@@ -54,8 +54,13 @@ layout: default
   </dt>
   <dd>
     <ul>
-      <% resource.relations.people.each do |person| %>
-        <li><a href="<%= person.relative_url %>"><%= person.data.name %></a></li>
+      <% resource.relations.people.zip(resource.data.speaker_languages || []).each do |person, speaker_language| %>
+        <li>
+          <a href="<%= person.relative_url %>"><%= person.data.name %></a>
+          <% if speaker_language == "ru" %>
+            (<abbr title="говорить московською">моск.</abbr>)
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </dd>
