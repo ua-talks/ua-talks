@@ -59,6 +59,8 @@ layout: default
           <a href="<%= person.relative_url %>"><%= person.data.name %></a>
           <% if speaker_language == "ru" %>
             (<abbr title="говорить московською">моск.</abbr>)
+          <% elsif speaker_language == "en" %>
+            (<abbr title="говорить англійською">англ.</abbr>)
           <% end %>
         </li>
       <% end %>
