@@ -6,6 +6,7 @@ links_to_listen:
   - https://soundcloud.com/kultpodcast
   - https://podcasts.apple.com/ua/podcast/kult-podcast/id1581339249
   - https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjg5MjM3MjAyNy9zb3VuZHMucnNz
+  - https://open.spotify.com/show/20wT5zU0ddOjcLCLtA5U4B
   - https://podcasts.nv.ua/ukr/podcast/37-kult-podcast.html
   - https://www.youtube.com/channel/UC9Odm1zc6bZuAMGaWZLtd8g
 social_media_links:
