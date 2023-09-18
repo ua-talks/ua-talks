@@ -26,13 +26,7 @@ layout: default
 
   <dt>Рік</dt>
   <% resource.relations.recordings.reduce(Set.new) { |memo, r| memo << r.data.date.year }.sort.tap do |years| %>
-    <dd>
-      <% if years.size > 1 %>
-        <%= years.first %> – <%= years.last %>
-      <% else %>
-        <%= years.first %>
-      <% end %>
-    </dd>
+    <dd><%= years_timespans(years) %></dd>
   <% end %>
 
   <dt>Кількість випусків</dt>
