@@ -1,5 +1,11 @@
 ---
 name: The Ukrainians Audio
+social_media_links:
+- https://www.facebook.com/theukrainiansorg
+- https://www.instagram.com/theukrainians/
+- https://twitter.com/the_ukrainians
+- https://t.me/tuorg
+- https://www.tiktok.com/@the_ukrainians
 ---
 
 The Ukrainians Audio — частина [The Ukrainians Media](https://theukrainians.org/), незалежної медійної екосистеми.

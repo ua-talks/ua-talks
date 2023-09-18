@@ -6,12 +6,28 @@ layout: default
 
 <%= yield %>
 
-<h2><%= t "podcasts.title" %></h2>
+<section>
+  <h2><%= t "podcasts.title" %></h2>
 
-<ul>
-  <% resource.relations.podcasts.each do |podcast| %>
-    <li>
-      <a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% resource.relations.podcasts.each do |podcast| %>
+      <li>
+        <a href="<%= podcast.relative_url %>"><%= podcast.data.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<% resource.data.social_media_links.presence&.tap do |links| %>
+  <section>
+    <h2>У соціальних мережах</h2>
+
+    <ul>
+      <% links.each do |link| %>
+        <li>
+          <a href="<%= link %>"><%= pretty_host_name(link) %></a>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
